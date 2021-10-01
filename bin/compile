@@ -5,7 +5,7 @@
 set -e
 
 # debug
-set -x
+# set -x
 
 build_dir=$1
 cache_dir=$2
@@ -14,5 +14,8 @@ env_dir=$3
 twng_asset_url="$(cat $env_dir/TWNG_ASSETS_URL)"
 
 cd $build_dir/twng
+
+echo "       downloading TWNG assets from $url"
+
 curl $twng_asset_url -o twng-assets.tar.gz
 tar xvfz twng-assets.tar.gz
