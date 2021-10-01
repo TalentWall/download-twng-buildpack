@@ -1,0 +1,17 @@
+#!/bin/sh
+# bin/compile <build-dir> <cache-dir>
+
+# fail fast
+set -e
+
+# debug
+set -x
+
+# BUILD_NUMBER=140
+
+echo "BUILD_NUMBER=$BUILD_NUMBER"
+echo "TWNG_ASSETS_URL=$TWNG_ASSETS_URL"
+
+cd $1/twng
+curl $TWNG_ASSETS_URL -o twng-assets.tar.gz
+tar xvfz twng-assets.tar.gz
