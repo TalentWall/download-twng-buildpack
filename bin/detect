@@ -2,7 +2,7 @@
 # bin/detect <build-dir>
 
 if [ -d $1/twng ]; then
-  echo "Download TWNG Buildpack.v2"
+  echo "Download TWNG Buildpack"
   exit 0
 else
   exit 1

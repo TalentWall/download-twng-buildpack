@@ -22,10 +22,18 @@ export_env_dir() {
   fi
 }
 
+echo "       about to import env vars"
 export_env_dir()
 
-echo "BUILD_NUMBER=$BUILD_NUMBER"
-echo "TWNG_ASSETS_URL=$TWNG_ASSETS_URL"
+echo "       about to echo build"
+echo "       BUILD_NUMBER=$BUILD_NUMBER"
+echo "       about to echo twng assets"
+echo "       TWNG_ASSETS_URL=$TWNG_ASSETS_URL"
+
+env_dir=$1
+url="$(cat $env_dir/TWNG_ASSETS_URL)"
+
+echo "       url=$url"
 
 cd $1/twng
 curl $TWNG_ASSETS_URL -o twng-assets.tar.gz
